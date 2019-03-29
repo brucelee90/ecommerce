@@ -15,20 +15,20 @@ export default class Details extends Component {
         return (
           <div className="container">
             {/* Titel */}
-            <div className="col-10 mx-auto text-center my-5">
-              <h1>Produktionformationen</h1>
+            <div className="col-10 col-md-6 col-sm-12 mx-auto text-center my-5">
+              <h1>Produktinfos</h1>
             </div>
             {/* titel Ende */}
             {/* Produktinfo */}
             {/* Bild */}
             <div className="row">
-              <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
+              <div className="col-10 mx-auto col-md-6 col-sm-12 my-3 text-capitalize">
                 <img src={img} className="img-fluid" alt="product" />
               </div>
               {/* Text */}
-              <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
+              <div className="col-10 mx-auto col-md-6 col-sm-12 my-3 text-capitalize">
                 <MDBContainer>
-                  <MDBCard style={{ width: "22rem", marginTop: "1rem" }}>
+                  <MDBCard style={{ marginTop: "1rem" }}>
                     <MDBCardHeader color="mdb-color lighten-1">Model: {title}</MDBCardHeader>
                     <MDBCardBody>
                       <MDBCardTitle>Hersteller: {company}</MDBCardTitle>
