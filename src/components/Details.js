@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {ProductConsumer} from '../Context'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardHeader, MDBBtn, MDBContainer } from "mdbreact";
 
 
@@ -11,7 +11,6 @@ export default class Details extends Component {
       <ProductConsumer>
         {value=>{
         const {id, company, img, info, price, title, inCart} = value.detailProduct
-        console.log(value.detailProduct);
         
         return (
           <div className="container">

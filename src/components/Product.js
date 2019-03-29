@@ -20,7 +20,7 @@ export default class Product extends Component {
         <MDBCol>
           <MDBCard className="mt-4 z-depth-1" style={{ width: "22rem"}}>
           <MDBView hover zoom>
-            <MDBCardImage style={{cursor: "pointer"}} className="img-fluid px-1 py-1" src={img} waves />
+            <MDBCardImage  style={{cursor: "pointer"}} className="img-fluid px-1 py-1" src={img} waves />
             <MDBMask className="flex-center rounded-top" overlay="stylish-strong">
             <Link to="/details">
             <MDBBtn 

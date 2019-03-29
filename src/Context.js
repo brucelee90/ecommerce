@@ -21,7 +21,7 @@ class ProductProvider extends Component {
 
     this.setState(()=>{
       return {amountItems: amount}
-    }, ()=>{console.log(this.state.amountItems);})
+    })
     
     
   }
@@ -97,7 +97,7 @@ class ProductProvider extends Component {
   increment = (id) => {
     // Artikel aus dem Warenkorb 
     let tempCart = [...this.state.cart]
-    const selectedProduct = tempCart.find(item => item.id == id)
+    const selectedProduct = tempCart.find(item => item.id === id)
 
     // Index des gewählten Artikels ermitteln
     const index = tempCart.indexOf(selectedProduct)
@@ -117,7 +117,7 @@ class ProductProvider extends Component {
   decrement = (id) => {
         // Artikel aus dem Warenkorb 
         let tempCart = [...this.state.cart]
-        const selectedProduct = tempCart.find(item => item.id == id)
+        const selectedProduct = tempCart.find(item => item.id === id)
     
         // Index des gewählten Artikels ermitteln
         const index = tempCart.indexOf(selectedProduct)
@@ -125,6 +125,8 @@ class ProductProvider extends Component {
 
         // Zähler runterzählen
         product.count = product.count - 1
+        console.log(product.count);
+        
 
         // Weniger als 0 Artikel kann es nicht geben
         
@@ -132,13 +134,15 @@ class ProductProvider extends Component {
         if (product.count === 0) {
           this.removeItem(id)
         }else{
-          product.total = product.count = product.price
-          this.setState(()=>{return{cart:[...tempCart]}}, ()=>{this.addTotals()})
+          product.total = product.count * product.price
+          this.setState(()=>{
+            return{cart:[...tempCart]}}, 
+          ()=>{this.addTotals()})
         }
   }
 
   removeItem = id => {
-    const tempCart = this.state.cart.filter(item => id != item.id)
+    const tempCart = this.state.cart.filter(item => id !== item.id)
     
     // alle Artikel im Warenkorb ermitteln
     const tempProducts = [...this.state.products]
@@ -176,11 +180,12 @@ class ProductProvider extends Component {
 
   // Gesamtbeträge berechnen
   addTotals = () =>{
-    let subTotal = 0
-    this.state.cart.map(item => (subTotal += item.total))
-    const tempTax = subTotal * 0.19
+    let total = 0
+    this.state.cart.map(item => (total += item.total))
+    // const tempTax = total / 1.19
+    const subTotal = total / 1.19
+    const tempTax = total - subTotal*1.0
     const tax = parseFloat(tempTax.toFixed(2))
-    const total = subTotal + tax*1.0
     this.setState(()=>{
       return{
         cartSubTotal: subTotal.toFixed(2),

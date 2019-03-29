@@ -4,7 +4,7 @@ import Title from './Title'
 // import { MDBRow } from "mdbreact";
 import {storeProducts} from '../data'
 import {ProductConsumer} from '../Context'
-import Button from './Button'
+// import Button from './Button'
 
 export default class ProductList extends Component {
   state={

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import {Link} from 'react-router-dom'
-import { MDBNavbar, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBIcon } from "mdbreact";
+import { MDBNavbar, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBIcon,MDBDropdown,MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from "mdbreact";
 import logo from '../logo.png'
 import {ProductConsumer} from '../Context'
 
@@ -30,11 +30,22 @@ render() {
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav left>
               <MDBNavItem>
-                <MDBNavLink to="#!">Home</MDBNavLink>
+                <MDBNavLink to="/">Home</MDBNavLink>
               </MDBNavItem>
-              <MDBNavItem active>
+              <MDBNavItem>
+              <MDBDropdown>
+                <MDBDropdownToggle nav caret>
+                  <span className="mr-2">Shop</span>
+                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem href="#!">Neue Smartphones</MDBDropdownItem>
+                  <MDBDropdownItem active href="/">Gebrauchte Smartphones</MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            </MDBNavItem>
+              {/* <MDBNavItem active>
                 <MDBNavLink to="/">Shop</MDBNavLink>
-              </MDBNavItem>
+              </MDBNavItem> */}
               <MDBNavItem>
                 <MDBNavLink to="#!">Imprint</MDBNavLink>
               </MDBNavItem>
