@@ -6,7 +6,10 @@
     "mdbreact": "^4.11.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8"
+    "react-numeric-input": "^2.2.3",
+    "react-paypal-express-checkout": "^1.0.5",
+    "react-scripts": "2.1.8",
+    "react-transition-group": "^2.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
